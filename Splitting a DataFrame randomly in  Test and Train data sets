@@ -1,0 +1,24 @@
+import pandas as pd
+import numpy as np
+df = pd.DataFrame(np.random.rand(10,2))
+#View the newly created DataFrame
+df
+#Find the index attribute of DataFrame
+x=df.index
+#Put number of indexes in  a variable 'x'
+x=len(x)
+x
+#Get your splitter variable ready (Here we are using 80 % data as training and 20 % as testing)
+y= int(x*0.8)
+y
+#Randomly put your data frame in another new DataFrame 
+df1 = df.sample(frac=1).reset_index(drop=True)
+df1
+
+#Create training set from new randomly shuffled DataFrame
+x_train = df1[:y]
+#Create test set from new randomly shuffled DataFrame
+x_test = df1[y:]
+#view both Training and Test data sets
+x_train
+x_test
